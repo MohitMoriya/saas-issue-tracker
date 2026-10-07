@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import type { DropResult } from '@hello-pangea/dnd';
 import { Plus } from 'lucide-react';
@@ -99,13 +99,21 @@ const ProjectBoard = () => {
           <h2 className="text-3xl font-extrabold text-slate-800 tracking-tight">{project.title}</h2>
           <p className="text-slate-500 mt-1">{project.key} Board</p>
         </div>
-        <button
-          onClick={() => setShowTaskModal(true)}
-          className="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors cursor-pointer font-medium shadow-sm"
-        >
-          <Plus size={20} />
-          Create Task
-        </button>
+        <div className="flex items-center gap-3">
+          <Link
+            to={`/project/${id}/analytics`}
+            className="flex items-center gap-2 bg-indigo-100 text-indigo-700 px-4 py-2 rounded-lg hover:bg-indigo-200 transition-colors font-medium shadow-sm"
+          >
+            View Analytics
+          </Link>
+          <button
+            onClick={() => setShowTaskModal(true)}
+            className="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors cursor-pointer font-medium shadow-sm"
+          >
+            <Plus size={20} />
+            Create Task
+          </button>
+        </div>
       </div>
 
       {/* Kanban Board */}

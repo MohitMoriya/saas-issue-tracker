@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import ProjectBoard from './pages/ProjectBoard';
+import ProjectAnalytics from './pages/ProjectAnalytics';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route element={<DashboardLayout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/project/:id" element={<ProjectBoard />} />
+            <Route path="/project/:id/analytics" element={<ProjectAnalytics />} />
             {/* Future routes: /projects/:id, /analytics, etc. */}
           </Route>
 
